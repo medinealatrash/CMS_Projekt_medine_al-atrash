@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "Book",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Author": {
+      "type": "string",
+      "required": true
+    },
+    "Page": {
+      "type": "integer",
+      "required": true
+    },
+    "Ratings": {
+      "type": "integer",
+      "required": true
+    },
+    "genres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::genre.genre",
+      "inversedBy": "books"
+    }
+  }
+}
